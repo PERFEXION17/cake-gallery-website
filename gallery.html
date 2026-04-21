@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Cakes Haven | Gallery</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><a href="index.html">Cakes Haven</a></div>
+        <div class="nav_links">
+          <a href="#" class="btn">Contact Us</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="gallery"></section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2026 All Rights Reserved | Cakes Haven |
+        <a
+          href="https://wa.me/2348100334346?text=Hello,%20Mr.%20Achusim%20Chibuike%20Joseph"
+          target="_blank"
+          >PERFEXION INC.</a
+        >
+      </p>
+    </footer>
+
+    <script type="module" src="/assets/js/data.js"></script>
+    <script type="module">
+      import { allProducts } from "/assets/js/data.js";
+
+      const gallery = document.getElementById("gallery");
+      const params = new URLSearchParams(window.location.search);
+      const currentSlug = params.get("slug");
+      const product = allProducts.find((p) => p.slug === currentSlug);
+
+      if (product) {
+        gallery.innerHTML = `
+        <h2>${product.title}</h2>
+        <div class='gallery_con'>
+            <div class='gallery_card span-2'>
+                <img src='${product.imgs[0]}' alt='' />
+            </div>
+            <div class='gallery_card'>
+                <img src='${product.imgs[1]}' alt='' />
+            </div>
+            <div class='gallery_card'>
+                <img src='${product.imgs[2]}' alt='' />
+            </div>
+            <div class='gallery_card span-2'>
+                <img src='${product.imgs[3]}' alt='' />
+            </div>
+        </div>
+        <div class='btn_con'><a href='index.html' class='btn'>Back to Home</a></div>
+        `;
+      } else {
+        gallery.innerHTML = `
+            <div class='empty_con'>
+            <h2> Item Not Found</h2>
+            <a href='index.html' class='btn'>Back to Home</a>
+            </div>
+            `;
+      }
+    </script>
+  </body>
+</html>
