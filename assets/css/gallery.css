@@ -4,23 +4,27 @@
 }
 
 .gallery_con{
+    margin-top: var(--spacing-xl);
     padding: var(--spacing-md) var(--spacing-xs);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-xl) var(--spacing-xs);
+    gap: var(--spacing-md) var(--spacing-xs);
 }
 
 .gallery_card{
-    height: 30vh;
-    border-radius: var(--border-radius);
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    height: 40vh;
 }
 
 .gallery_card img{
     width: 100%;
-    height: 100%;
+    height: 80%;
     object-fit: cover;
     object-position: center;
+    border-radius: var(--border-radius);
+
 }
 
 .btn_con{
@@ -53,6 +57,7 @@ padding: var(--spacing-md);
 
 @media (min-width: 900px) {
     .gallery_con{
+        margin-top: var(--spacing-xl);
         padding: var(--spacing-md) var(--spacing-xxl);
         grid-template-columns: repeat(3, 1fr);
     }

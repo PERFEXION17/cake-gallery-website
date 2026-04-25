@@ -41,24 +41,27 @@
       const product = allProducts.find((p) => p.slug === currentSlug);
 
       if (product) {
+        // Use map to loop through the images and create HTML for each
+        const imagesHTML = product.imgs
+          .map(
+            (img, index) => `
+              <div class="gallery_card ${index === 0 || index === 3 ? "span-2" : ""}">
+                  <img src="${img.url}" alt="${img.name}" />
+                  <div class="cake-info">
+                      <h3>${img.name}</h3>
+                  </div>
+              </div>
+            `,
+          )
+          .join(""); // .join('') turns the array into one long string of HTML
+
         gallery.innerHTML = `
-        <h2>${product.title}</h2>
-        <div class='gallery_con'>
-            <div class='gallery_card span-2'>
-                <img src='${product.imgs[0]}' alt='' />
+            <h2>${product.title}</h2>
+            <div class='gallery_con'>
+                ${imagesHTML}
             </div>
-            <div class='gallery_card'>
-                <img src='${product.imgs[1]}' alt='' />
-            </div>
-            <div class='gallery_card'>
-                <img src='${product.imgs[2]}' alt='' />
-            </div>
-            <div class='gallery_card span-2'>
-                <img src='${product.imgs[3]}' alt='' />
-            </div>
-        </div>
-        <div class='btn_con'><a href='index.html' class='btn'>Back to Home</a></div>
-        `;
+            <div class='btn_con'><a href='index.html' class='btn'>Back to Home</a></div>
+          `;
       } else {
         gallery.innerHTML = `
             <div class='empty_con'>
