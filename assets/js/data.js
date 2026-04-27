@@ -1,93 +1,236 @@
 export const allProducts = [
   {
     slug: "daily-cakes",
-    category: "daily-cakes",
     title: "DAILY CAKES",
-    imgs: [
+    items: [
       {
-        url: "./assets/imgs/cakes/daily-cakes/daily-cake-1.webp",
-        name: "Vanilla Cloud Sponge",
+        id: "dc-01",
+        name: "Vanilla CLoud Sponge",
+        mainImage: "./assets/imgs/cakes/daily-cakes/daily-cakes-1/main.webp",
+        gallery: [
+          "./assets/imgs/cakes/daily-cakes/daily-cakes-1/main.webp",
+          "./assets/imgs/cakes/daily-cakes/daily-cakes-1/main.webp",
+          "./assets/imgs/cakes/daily-cakes/daily-cakes-1/main.webp",
+          "./assets/imgs/cakes/daily-cakes/daily-cakes-1/main.webp",
+        ],
+        description:
+          "A magnificent four-tier cake with hand-piped royal icing.",
       },
       {
-        url: "./assets/imgs/cakes/daily-cakes/daily-cake-2.webp",
+        id: "dc-02",
         name: "Double Choco Fudge",
+        mainImage: "./assets/imgs/cakes/daily-cakes/daily-cakes-2/main.webp",
+        gallery: [
+          "./assets/imgs/cakes/daily-cakes/daily-cakes-2/main.webp",
+          "./assets/imgs/cakes/daily-cakes/daily-cakes-2/main.webp",
+          "./assets/imgs/cakes/daily-cakes/daily-cakes-2/main.webp",
+          "./assets/imgs/cakes/daily-cakes/daily-cakes-2/main.webp",
+        ],
+        description:
+          "A magnificent four-tier cake with hand-piped royal icing.",
       },
       {
-        url: "./assets/imgs/cakes/daily-cakes/daily-cake-3.webp",
+        id: "dc-03",
         name: "Zesty Lemon Drizzle",
+        mainImage: "./assets/imgs/cakes/daily-cakes/daily-cakes-3/main.webp",
+        gallery: [
+          "./assets/imgs/cakes/daily-cakes/daily-cakes-3/main.webp",
+          "./assets/imgs/cakes/daily-cakes/daily-cakes-3/main.webp",
+          "./assets/imgs/cakes/daily-cakes/daily-cakes-3/main.webp",
+          "./assets/imgs/cakes/daily-cakes/daily-cakes-3/main.webp",
+        ],
+        description:
+          "A magnificent four-tier cake with hand-piped royal icing.",
       },
       {
-        url: "./assets/imgs/cakes/daily-cakes/daily-cake-4.webp",
+        id: "dc-04",
         name: "Red Velvet Dream",
+        mainImage: "./assets/imgs/cakes/daily-cakes/daily-cakes-4/main.webp",
+        gallery: [
+          "./assets/imgs/cakes/daily-cakes/daily-cakes-4/main.webp",
+          "./assets/imgs/cakes/daily-cakes/daily-cakes-4/main.webp",
+          "./assets/imgs/cakes/daily-cakes/daily-cakes-4/main.webp",
+          "./assets/imgs/cakes/daily-cakes/daily-cakes-4/main.webp",
+        ],
+        description:
+          "A magnificent four-tier cake with hand-piped royal icing.",
       },
     ],
   },
+
   {
     slug: "ceremonial-cakes",
-    category: "ceremonial-cakes",
     title: "CEREMONIAL CAKES",
-    imgs: [
+    items: [
       {
-        url: "./assets/imgs/cakes/ceremonial-cakes/ceremonial-cake-1.webp",
+        id: "cc-01",
         name: "Grand Ivory Tier",
+        mainImage: "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-1/main.webp",
+        gallery: [
+          "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-1/view-1.webp",
+          "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-1/main.webp",
+          "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-1/main.webp",
+          "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-1/view-1.webp",
+        ],
+        description:
+          "A magnificent four-tier cake with hand-piped royal icing.",
       },
       {
-        url: "./assets/imgs/cakes/ceremonial-cakes/ceremonial-cake-2.webp",
+        id: "cc-02",
         name: "Floral Celebration Sponge",
+        mainImage: "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-2/main.webp",
+        gallery: [
+          "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-2/main.webp",
+          "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-2/main.webp",
+          "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-2/main.webp",
+          "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-2/main.webp",
+        ],
+        description:
+          "A magnificent four-tier cake with hand-piped royal icing.",
       },
       {
-        url: "./assets/imgs/cakes/ceremonial-cakes/ceremonial-cake-3.webp",
+        id: "cc-03",
         name: "Golden Jubilee Gateau",
+        mainImage: "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-3/main.webp",
+        gallery: [
+          "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-3/main.webp",
+          "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-3/main.webp",
+          "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-3/main.webp",
+          "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-3/main.webp",
+        ],
+        description:
+          "A magnificent four-tier cake with hand-piped royal icing.",
       },
       {
-        url: "./assets/imgs/cakes/ceremonial-cakes/ceremonial-cake-4.webp",
+        id: "cc-04",
         name: "Regency Velvet Pillar",
+        mainImage: "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-4/main.webp",
+        gallery: [
+          "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-4/main.webp",
+          "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-4/main.webp",
+          "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-4/main.webp",
+          "./assets/imgs/cakes/ceremonial-cakes/cer-cakes-4/main.webp",
+        ],
+        description:
+          "A magnificent four-tier cake with hand-piped royal icing.",
       },
     ],
   },
+
   {
     slug: "cookies",
-    category: "cookies",
     title: "COOKIES",
-    imgs: [
+    items: [
       {
-        url: "./assets/imgs/cookies/cookies-1.webp",
+        id: "ck-01",
         name: "Classic Choco-Chip Chunk",
+        mainImage: "./assets/imgs/cookies/cookies-1/main.webp",
+        gallery: [
+          "./assets/imgs/cookies/cookies-1/main.webp",
+          "./assets/imgs/cookies/cookies-1/main.webp",
+          "./assets/imgs/cookies/cookies-1/main.webp",
+          "./assets/imgs/cookies/cookies-1/main.webp",
+        ],
+        description:
+          "A magnificent four-tier cake with hand-piped royal icing.",
       },
       {
-        url: "./assets/imgs/cookies/cookies-2.webp",
+        id: "ck-02",
         name: "Salted Caramel Shortbread",
+        mainImage: "./assets/imgs/cookies/cookies-2/main.webp",
+        gallery: [
+          "./assets/imgs/cookies/cookies-2/main.webp",
+          "./assets/imgs/cookies/cookies-2/main.webp",
+          "./assets/imgs/cookies/cookies-2/main.webp",
+          "./assets/imgs/cookies/cookies-2/main.webp",
+        ],
+        description:
+          "A magnificent four-tier cake with hand-piped royal icing.",
       },
       {
-        url: "./assets/imgs/cookies/cookies-3.webp",
+        id: "ck-03",
         name: "Double Cocoa Bliss",
+        mainImage: "./assets/imgs/cookies/cookies-3/main.webp",
+        gallery: [
+          "./assets/imgs/cookies/cookies-3/main.webp",
+          "./assets/imgs/cookies/cookies-3/main.webp",
+          "./assets/imgs/cookies/cookies-3/main.webp",
+          "./assets/imgs/cookies/cookies-3/main.webp",
+        ],
+        description:
+          "A magnificent four-tier cake with hand-piped royal icing.",
       },
       {
-        url: "./assets/imgs/cookies/cookies-4.webp",
+        id: "ck-04",
         name: "Oat & Sultana Delight",
+        mainImage: "./assets/imgs/cookies/cookies-4/main.webp",
+        gallery: [
+          "./assets/imgs/cookies/cookies-4/main.webp",
+          "./assets/imgs/cookies/cookies-4/main.webp",
+          "./assets/imgs/cookies/cookies-4/main.webp",
+          "./assets/imgs/cookies/cookies-4/main.webp",
+        ],
+        description:
+          "A magnificent four-tier cake with hand-piped royal icing.",
       },
     ],
   },
+
   {
     slug: "desserts",
-    category: "desserts",
     title: "DESSERTS",
-    imgs: [
+    items: [
       {
-        url: "./assets/imgs/desserts/desserts-1.webp",
-        name: "Summer Berry Parfait",
+        id: "ds-01",
+        name: "Classic Choco-Chip Chunk",
+        mainImage: "./assets/imgs/desserts/desserts-1/main.webp",
+        gallery: [
+          "./assets/imgs/desserts/desserts-1/main.webp",
+          "./assets/imgs/desserts/desserts-1/main.webp",
+          "./assets/imgs/desserts/desserts-1/main.webp",
+          "./assets/imgs/desserts/desserts-1/main.webp",
+        ],
+        description:
+          "A magnificent four-tier cake with hand-piped royal icing.",
       },
       {
-        url: "./assets/imgs/desserts/desserts-2.webp",
-        name: "Midnight Chocolate Mousse",
+        id: "ds-02",
+        name: "Salted Caramel Shortbread",
+        mainImage: "./assets/imgs/desserts/desserts-2/main.webp",
+        gallery: [
+          "./assets/imgs/desserts/desserts-2/main.webp",
+          "./assets/imgs/desserts/desserts-2/main.webp",
+          "./assets/imgs/desserts/desserts-2/main.webp",
+          "./assets/imgs/desserts/desserts-2/main.webp",
+        ],
+        description:
+          "A magnificent four-tier cake with hand-piped royal icing.",
       },
       {
-        url: "./assets/imgs/desserts/desserts-3.webp",
-        name: "Zesty Lemon Tartlet",
+        id: "ds-03",
+        name: "Double Cocoa Bliss",
+        mainImage: "./assets/imgs/desserts/desserts-3/main.webp",
+        gallery: [
+          "./assets/imgs/desserts/desserts-3/main.webp",
+          "./assets/imgs/desserts/desserts-3/main.webp",
+          "./assets/imgs/desserts/desserts-3/main.webp",
+          "./assets/imgs/desserts/desserts-3/main.webp",
+        ],
+        description:
+          "A magnificent four-tier cake with hand-piped royal icing.",
       },
       {
-        url: "./assets/imgs/desserts/desserts-4.webp",
-        name: "Vanilla Bean Panna Cotta",
+        id: "ds-04",
+        name: "Oat & Sultana Delight",
+        mainImage: "./assets/imgs/desserts/desserts-4/main.webp",
+        gallery: [
+          "./assets/imgs/desserts/desserts-4/main.webp",
+          "./assets/imgs/desserts/desserts-4/main.webp",
+          "./assets/imgs/desserts/desserts-4/main.webp",
+          "./assets/imgs/desserts/desserts-4/main.webp",
+        ],
+        description:
+          "A magnificent four-tier cake with hand-piped royal icing.",
       },
     ],
   },

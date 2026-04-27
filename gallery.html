@@ -38,38 +38,103 @@
       const gallery = document.getElementById("gallery");
       const params = new URLSearchParams(window.location.search);
       const currentSlug = params.get("slug");
-      const product = allProducts.find((p) => p.slug === currentSlug);
 
-      if (product) {
-        // Use map to loop through the images and create HTML for each
-        const imagesHTML = product.imgs
+      // 1. Find the main category object
+      const categoryData = allProducts.find((p) => p.slug === currentSlug);
+
+      if (categoryData) {
+        // 2. Map through the products inside this category
+        const itemsHTML = categoryData.items
           .map(
-            (img, index) => `
-              <div class="gallery_card ${index === 0 || index === 3 ? "span-2" : ""}">
-                  <img src="${img.url}" alt="${img.name}" />
-                  <div class="cake-info">
-                      <h3>${img.name}</h3>
-                  </div>
-              </div>
-            `,
+            (item, index) => `
+            <div class="gallery_card ${index === 0 || index === 3 ? "span-2" : ""}" 
+                onclick="openSliderModal('${item.id}')">
+                <img src="${item.mainImage}" alt="${item.name}" />
+                <div class="cake-info">
+                    <h3>${item.name}</h3>
+                    <p style='text-decoration: underline;'>View Gallery</p>
+                </div>
+            </div>
+        `,
           )
-          .join(""); // .join('') turns the array into one long string of HTML
+          .join("");
 
         gallery.innerHTML = `
-            <h2>${product.title}</h2>
-            <div class='gallery_con'>
-                ${imagesHTML}
-            </div>
-            <div class='btn_con'><a href='index.html' class='btn'>Back to Home</a></div>
+          <h2>${categoryData.title}</h2>
+          <div class='gallery_con'>
+              ${itemsHTML}
+          </div>
+          <div class='btn_con'><a href='index.html' class='btn'>Back to Home</a></div>
           `;
+
+        // 3. The Modal Controller Logic
+        window.openSliderModal = (itemId) => {
+          // Find the specific product clicked
+          const item = categoryData.items.find((i) => i.id === itemId);
+          const modal = document.getElementById("sliderModal");
+          const container = document.getElementById("slidesContainer");
+          const dots = document.getElementById("dotIndicator");
+
+          // Merge main image and sub-gallery into one array
+          const allImages = [item.mainImage, ...item.gallery];
+
+          // Inject Slides
+          container.innerHTML = allImages
+            .map(
+              (url) => `
+                <img src="${url}" alt="${item.name}">
+              `,
+            )
+            .join("");
+
+          // Inject Dots
+          dots.innerHTML = allImages
+            .map(
+              (_, i) => `
+                <div class="dot ${i === 0 ? "active" : ""}"></div>
+              `,
+            )
+            .join("");
+
+          document.getElementById("modalCaption").innerHTML = `
+          <h3>${item.name}</h3>
+          <p>${item.description}</p>
+            `;
+          modal.style.display = "flex";
+          document.body.style.overflow = "hidden"; // Prevent background scroll
+
+          // Logic for indicator dots
+          container.onscroll = () => {
+            const index = Math.round(
+              container.scrollLeft / container.offsetWidth,
+            );
+            document.querySelectorAll(".dot").forEach((dot, i) => {
+              dot.classList.toggle("active", i === index);
+            });
+          };
+        };
+
+        window.closeModal = () => {
+          document.getElementById("sliderModal").style.display = "none";
+          document.body.style.overflow = "auto";
+        };
       } else {
         gallery.innerHTML = `
-            <div class='empty_con'>
-            <h2> Item Not Found</h2>
+        <div class='empty_con'>
+            <h2>Category Not Found</h2>
             <a href='index.html' class='btn'>Back to Home</a>
-            </div>
-            `;
+        </div>
+    `;
       }
     </script>
+
+    <div id="sliderModal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <div id="slidesContainer" class="slides-container"></div>
+        <h3 id="modalCaption" style="text-align: center; margin-top: var(--spacing-xs)"></h3>
+        <div id="dotIndicator" class="dot-indicator"></div>
+      </div>
+    </div>
   </body>
 </html>
